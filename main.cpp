@@ -1,12 +1,14 @@
 #include "Window.h"
 #include <SDL.h>
 #include <SDL_image.h>
+#include "Game.h"
+#include <ctime>
 
 Window *window = nullptr;
 
 int main(int arg, const char * argv[])
 {
-
+    srand(time(0));
     const int FPS =60;
     const int frameDelay = 1000/FPS;
 

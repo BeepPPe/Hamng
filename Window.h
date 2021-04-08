@@ -6,6 +6,7 @@
 #include <SDL_image.h>
 #include <iostream>
 
+
 class Window{
 
 public:
@@ -21,9 +22,10 @@ public:
 
     bool running() { return isRunning; };
 
+    static SDL_Renderer* renderer; //window renderer
 private:
     bool isRunning;
     SDL_Window* window; //Window rendering
 
-    SDL_Renderer* renderer; //window renderer
+
 };

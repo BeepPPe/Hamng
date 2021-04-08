@@ -2,8 +2,12 @@
 #include "TextureManager.h"
 #include "GameObject.h"
 
+LTexture Alphabet;
+SDL_Rect AlphabeticClips[27];
 SDL_Texture* Background = NULL;
 GameObject* hanger;
+
+SDL_Renderer* Window::renderer = nullptr;
 
 Window::Window()
 {};
@@ -33,8 +37,23 @@ void Window::init(const char* title, int xpos, int ypos, int width, int height, 
         }
         isRunning = true;
 
-        Background = TextureManager::LoadTexture("assets/background.png", renderer);
-        hanger = new GameObject("assets/hanger.png", renderer, 320, 240);
+        Background = TextureManager::LoadTexture("assets/background.png",renderer);
+        hanger = new GameObject("assets/hanger.png",350, 134, 251, 91);
+
+        if (!Alphabet.loadFromFile("assets/Alphabet.png"))
+        {
+            printf("Fail to load Alphabet");
+        }
+        else {
+            AlphabeticClips[26].x = 26;
+            AlphabeticClips[26].y = 64;
+            AlphabeticClips[26].w = 13;
+            AlphabeticClips[26].h = 16;
+
+            Alphabet.TextureRender(0,0,&AlphabeticClips[26]);
+
+            SDL_RenderPresent(renderer);
+        }
 
     } else isRunning = false;
 }
