@@ -6,6 +6,8 @@ LTexture Alphabet;
 SDL_Rect AlphabeticClips[27];
 SDL_Texture* Background = NULL;
 GameObject* hanger;
+LTexture PlayButton;
+SDL_Rect PlayButtonClip[2];
 
 SDL_Renderer* Window::renderer = nullptr;
 
@@ -54,6 +56,19 @@ void Window::init(const char* title, int xpos, int ypos, int width, int height, 
 
             SDL_RenderPresent(renderer);
         }
+        //button
+        if (!PlayButton.loadFromFile("assets/PlayButton.png"))
+        {
+            printf("Fail to load PlayButton");
+        } else
+        {
+            PlayButtonClip[0].x = 0;
+            PlayButtonClip[0].y = 43;
+            PlayButtonClip[0].w = 140;
+            PlayButtonClip[0].h = 43;
+        }
+        PlayButton.TextureRender(44, 424, &PlayButtonClip[0]);
+        SDL_RenderPresent(renderer);
 
     } else isRunning = false;
 }

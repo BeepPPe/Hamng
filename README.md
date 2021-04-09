@@ -1,6 +1,6 @@
 # Hamng
 
-tôi thêm class Ltexture để load Sprite
-tôi thử cắt sprite để lấy * nhưng mà chưa thấy trên màn hình sau ông xem giúp tôi cách sửa và chỉnh size
+Phần sửa này ông dùng Compare & Pull requests thì sẽ thấy rõ hơn mấy cái thay đổi.
+Có gì k hiểu thì hỏi lại nhé
 
-# Tuấn Anh
+**Bá Lương**
